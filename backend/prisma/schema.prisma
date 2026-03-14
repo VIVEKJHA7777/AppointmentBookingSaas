@@ -59,6 +59,7 @@ model Service {
   price             Int
   currency          String
   locationAddress   String?
+  isActive          Boolean     @default(true)
 
   Organization Organization @relation(fields: [organizationId], references: [id])
 
