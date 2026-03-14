@@ -7,6 +7,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import { errorHandler } from "./middlewares/error.middleware.js";
 import authRouter from "./modules/auth/auth.route.js";
+import orgRouter from "./modules/organization/organization.route.js";
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.get("/health-check",(req: Request, res: Response)=>{
 });
 
 app.use("/api/v1/auth",authRouter);
+app.use("/api/v1/organization", orgRouter);
 
 app.use(errorHandler);
 
